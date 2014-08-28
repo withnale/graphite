@@ -1,12 +1,29 @@
 Description
 ===========
 
-Installs and configures Graphite http://graphite.wikidot.com/
+Legacy version of chef cookbook to install and configure Graphite http://graphite.wikidot.com/
 
 Consult the Graphite documentation for more information:
 
 - http://graphite.readthedocs.org/en/latest/
 - http://graphite.wikidot.com/
+
+Deprecation Warning !!111001!
+=============================
+
+This cookbook has been majorly rewritten and released as v1.0. It's
+now a library cookbook for you to use as you see fit in your custom
+wrapper cookbooks. You should try it out sometime.
+
+This branch is kept around for those who need it but seriously this
+is the wild west of chef cookbooks. Untested, unsupported, unverified
+and abandoned functionality.
+
+You can just hear
+[The Good, the Bad and the Ugly Theme](https://www.youtube.com/watch?v=h1PfrmCGFnk)
+as you read this.
+
+You have been warned.
 
 Requirements
 ============
