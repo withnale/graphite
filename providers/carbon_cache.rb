@@ -27,6 +27,9 @@ action :create do
   if new_resource.install 
     set_updated { install_python_pip }
   end 
+  if new_resource.fragment
+    set_updated { create_tracking_fragment }
+  end
 end
 
 def install_python_pip
@@ -34,6 +37,13 @@ def install_python_pip
     new_resource.backend_attributes.each { |attr, value| send(attr, value) }
     Chef::Log.info "Installing storage backend: #{package_name}"
     action :install
+  end
+end
+
+def create_tracking_fragment
+  file new_resource.name do
+    content ChefGraphite.ini_file(resources_to_hashes([new_resource]))
+    action :create
   end
 end
 

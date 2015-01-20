@@ -23,6 +23,7 @@ default_action :create
 attribute :name, :kind_of => String, :default => nil, :name_attribute => true
 attribute :backend, :kind_of => [String, Hash], :default => "whisper"
 attribute :install, :kind_of => [TrueClass, FalseClass], :default => true
+attribute :fragment, :kind_of => String, :default => nil
 attribute :config, :kind_of => Hash, :default => nil
 
 def backend_name
