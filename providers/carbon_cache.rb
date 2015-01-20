@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include ChefGraphite::Mixins
+
 def whyrun_supported?
   true
 end
@@ -42,7 +44,7 @@ end
 
 def create_tracking_fragment
   file new_resource.name do
-    content ChefGraphite.ini_file(ChefGraphite::Mixins.resources_to_hashes([new_resource]))
+    content ChefGraphite.ini_file(resources_to_hashes([new_resource]))
     action :create
   end
 end
