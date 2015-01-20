@@ -26,12 +26,8 @@ end
 use_inline_resources
 
 action :create do
-  if new_resource.install 
-    set_updated { install_python_pip }
-  end 
-  if new_resource.fragment
-    set_updated { create_tracking_fragment }
-  end
+  set_updated { install_python_pip } if new_resource.install
+  set_updated { create_tracking_fragment } if new_resource.fragment
 end
 
 def install_python_pip

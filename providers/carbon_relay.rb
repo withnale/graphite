@@ -26,9 +26,7 @@ end
 use_inline_resources
 
 action :create do
-  if new_resource.fragment
-    set_updated { create_tracking_fragment }
-  end
+  set_updated { create_tracking_fragment } if new_resource.fragment
 end
 
 def create_tracking_fragment
