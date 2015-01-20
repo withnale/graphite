@@ -43,7 +43,7 @@ def install_python_pip
 end
 
 def create_tracking_fragment
-  file new_resource.name do
+  file new_resource.fragment do
     content ChefGraphite.ini_file(resources_to_hashes([new_resource]))
     action :create
   end
